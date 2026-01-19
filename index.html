@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>MEG Script Bot Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" src="assets/audio/intro.mp3" loop></audio>
+
+<!-- WAYANG -->
+<img src="assets/img/wayang.png" class="wayang" alt="Wayang">
+
+<!-- LANDING -->
+<section class="landing" id="landing">
+  <h1>MEG Script BOT STORE</h1>
+  <p>WhatsApp & Telegram Script Bot</p>
+  <button id="enterBtn">MASUK</button>
+</section>
+
+<!-- CONTENT -->
+<section class="content hidden" id="content">
+
+  <div class="filter">
+    <select id="filterPlatform">
+      <option value="all">Semua Platform</option>
+      <option value="wa">WhatsApp</option>
+      <option value="tg">Telegram</option>
+    </select>
+
+    <select id="filterPrice">
+      <option value="all">Semua Tipe</option>
+      <option value="paid">Berbayar</option>
+      <option value="free">Gratis</option>
+    </select>
+  </div>
+
+  <div class="cards">
+
+    <div class="card" data-platform="wa" data-price="paid">
+      <h3>Bot WA Store</h3>
+      <p>Bot WhatsApp jualan otomatis + pairing</p>
+      <span>Rp 50.000</span>
+      <button onclick="orderWA('Bot WA Store','50000')">ORDER</button>
+    </div>
+    
+    <div class="card" data-platform="tg" data-price="paid">
+      <h3>Bot Reseller Nokos</h3>
+      <p>Bot Telegram otomatis jualan Nokos, saldo bisa di cairkan</p>
+      <span>Rp 50.000</span>
+      <button onclick="orderWA('Bot WA Store','50000')">ORDER</button>
+
+    <div class="card" data-platform="tg" data-price="free">
+      <h3>AlyaChan-MD</h3>
+      <p>Bot WhatsApp auto reply & menu</p>
+      <span>GRATIS</span>
+      <a href="https://www.mediafire.com/file/7r2fyflcraeq6qb/Alya_Chan.zip/file" target="_blank">DOWNLOAD</a>
+    </div>
+
+  </div>
+</section>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
