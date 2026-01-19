@@ -1,0 +1,236 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* =========================
+   BODY & BACKGROUND
+========================= */
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #f5e6b3;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("../img/background.jpg") center / cover no-repeat;
+
+  background-attachment: fixed;
+}
+
+/* =========================
+   WAYANG ANIMATION
+========================= */
+.wayang {
+  position: fixed;
+  bottom: -25px;
+  right: -60%;
+
+  width: 55vw;
+  max-width: 420px;
+  height: auto;
+
+  opacity: 0.45;          /* siluet lembut */
+  z-index: 1;
+  pointer-events: none;
+
+  /* 🔥 EFEK SILUET */
+  filter:
+    grayscale(100%)
+    brightness(0)
+    contrast(200%)
+    drop-shadow(0 0 18px rgba(0,0,0,0.6));
+
+  animation:
+    wayangSlide 12s linear infinite,
+    wayangFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes wayangSlide {
+  from { right: -60%; }
+  to   { right: 110%; }
+}
+
+@keyframes wayangFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-30px); }
+}
+
+/* =========================
+   LANDING SECTION
+========================= */
+.landing {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.landing h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.landing p {
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   TOMBOL AWAL (MASUK)
+========================= */
+.landing button {
+  display: inline-block;
+  width: auto;
+
+  padding: 14px 44px;
+  font-size: 18px;
+
+  background: #c9a44c;
+  color: #000;
+  border: none;
+  border-radius: 999px;
+
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(201,164,76,0.35);
+  transition: 0.3s ease;
+}
+
+.landing button:hover {
+  background: #e0b85a;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.hidden {
+  display: none;
+}
+
+.content {
+  padding: 40px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* =========================
+   FILTER
+========================= */
+.filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+select {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 14px;
+  border: none;
+
+  background: #2a1f14;
+  color: #f5e6b3;
+}
+
+/* =========================
+   CARD LIST
+========================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: rgba(20,15,10,0.9);
+  border-radius: 18px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.card span {
+  font-weight: bold;
+}
+
+/* =========================
+   BUTTON CARD (ORDER / DOWNLOAD)
+========================= */
+.card button,
+.card a {
+  display: inline-block !important;
+  width: auto !important;
+
+  padding: 7px 16px;
+  font-size: 13px;
+
+  background: #c9a44c;
+  color: #000;
+  border: none;
+  border-radius: 999px;
+
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.card button:hover,
+.card a:hover {
+  background: #e0b85a;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+@media (max-width: 600px) {
+  .wayang {
+    width: 65vw;
+    opacity: 0.7;
+  }
+
+  .landing h1 {
+    font-size: 28px;
+  }
+
+  .landing button {
+    padding: 12px 36px;
+    font-size: 16px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+}
